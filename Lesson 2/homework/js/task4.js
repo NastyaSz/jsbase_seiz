@@ -9,8 +9,8 @@ if(minNumber > maxNumber){
     alert("Ошибка");
 }
 for(sum; minNumber <= maxNumber; minNumber++){
-    sum = sum + minNumber;
-    if(minNumber % 2 == 1){
+    sum += minNumber;
+    if(minNumber % 2){
         document.write(minNumber + "<br>");
     }
 
