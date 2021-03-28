@@ -12,13 +12,12 @@ let userCar = prompt("Введите марку машины");
 for(let i = 0; i <= cars.length; i++){
     if(userCar == cars[i]){
         let newCar = prompt("Введите марку машины для вставки: ");
-        cars.splice(i+1, 0, newCar);
-        console.log(cars);
+        cars.splice(i + 1, 0, newCar);
         break;
     }
     if(i == cars.length){
         cars.push(userCar);
-        console.log(cars);
         break;
     }
 }
+console.log(cars);
