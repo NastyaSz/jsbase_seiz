@@ -13,20 +13,16 @@ function calculate(a, b, sign){
 	switch (sign) {
 		case "+":
 			return a + b;
-			break;
 		case "-":
-			return a - b;
-			break;
+			return a - b;	
 		case "*":
 			return a * b;
-			break;
 		case "/":
 			if(b == 0){
 				return "это деление на 0";
 			}else{
 				return a / b;
 			}
-			break;
 		default:
 			return sign + " не является знаком арифметической операции";
 	}

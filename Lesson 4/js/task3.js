@@ -7,5 +7,5 @@
 
 
 function isEven(num) {
-    num % 2? "Odd": "Even";
+   return num % 2? "Odd": "Even";
 }
