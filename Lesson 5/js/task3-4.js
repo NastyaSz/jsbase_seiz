@@ -11,17 +11,20 @@
 */
 let companyEmployees = [];
 function createEmp() {
-    user = {
+    companyEmployees.push({
         name: prompt("Введите имя сотрудника"),
         sName: prompt("Введите фамилию сотрудника"),
         age: +prompt("Введите возраст сотрудника"),
         occupation: prompt("Введите должность сотрудника"),
         show() {
-            document.write("Имя: " + this.name + "<br> Фамилия: " + this.sName + "<br> Возраст: " + this.age + "<br> Должность:  " + this.occupation + "<hr>");
+            document.write("Имя: " + this.name 
+            + "<br> Фамилия: " + this.sName 
+            + "<br> Возраст: " + this.age 
+            + "<br> Должность:  " + this.occupation 
+            + "<hr>");
         }
-    };
-    companyEmployees.push(user);
-    return user.show();
+    });
+    // return user.show();
 }
 
 let nextEmp = true;
@@ -45,8 +48,17 @@ function addSalary() {
                 break;
             default: companyEmployees[i].salary = 1000;
         }
+        companyEmployees[i].show = function() {
+        	document.write("Имя: " + this.name 
+            	+ "<br> Фамилия: " + this.sName 
+              + "<br> Возраст: " + this.age 
+              + "<br> Должность:  " + this.occupation 
+              + "<br> Зарплата:  " + this.salary 
+              + "<hr>");
+        };
     }
 }
 addSalary();
-console.log(companyEmployees);
+companyEmployees.forEach(x => x.show());
+
 
