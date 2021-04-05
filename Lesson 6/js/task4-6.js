@@ -125,18 +125,21 @@ var highRating = watchList.filter((item) =>{
     return item["imdbRating"] >= 8.0;
 });
 var filteredList = highRating.map((item) =>{
-    return item["Title"] + " " + item["imdbRating"];
+    return {
+        Title: item["Title"],
+        Rating: item["imdbRating"]
+    } 
 });
 console.log(filteredList);
 
 /*6. Массив watchList содержит объекты с информацией о нескольких фильмах. Используйте reduce, чтобы найти средний рейтинг IMDB фильмов, снятых режиссером Кристофером Ноланом. Вспомните из предыдущих заданий filter и map. Вам может потребоваться создать другие переменные, но сохраните окончательное среднее значение в переменную AverageRating. Обратите внимание, что значения рейтинга сохраняются в виде строк в объекте и должны быть преобразованы в числа, прежде чем они будут использованы в любых математических операциях.*/
 
 let nolanMovies = watchList.filter((item) => item["Director"] == "Christopher Nolan").map((item) =>{
-    return item[["imdbRating"]];
+    return +item[["imdbRating"]];
 });
-for(let prop in nolanMovies){
-    nolanMovies[prop] = Number(nolanMovies[prop]);
-}
+// for(let prop in nolanMovies){
+//     nolanMovies[prop] = Number(nolanMovies[prop]);
+// }
 let AverageRating = nolanMovies.reduce((prevNum, currNum) => prevNum + currNum, 0) / nolanMovies.length;
 // console.log(nolanMovies);
 console.log("Средний рейтинг фильмов Кристофера Нолана: " + AverageRating);

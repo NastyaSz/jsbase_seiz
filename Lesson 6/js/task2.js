@@ -51,3 +51,8 @@ function countOnline(arr) {
    
 }
 console.log(countOnline(users));
+
+// Другой вариант
+
+let result = users.filter(x => x.online).length;
+console.log(result);
